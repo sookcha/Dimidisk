@@ -5,7 +5,7 @@ gem 'sinatra'
 gem 'sinatra-base'
 gem 'sinatra-partial'
 gem 'sinatra-static-assets'
-gem 'sinatra-cross_origin'
+gem 'sinatra-session'
 
 # Using PUMA for web server.
 gem 'puma'

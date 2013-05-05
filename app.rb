@@ -1,10 +1,11 @@
 require 'sinatra'
 require 'sinatra/partial'
 require 'sinatra/static_assets'
-require 'sinatra/cross_origin'
+require 'sinatra/session'
 require 'haml'
 require 'less'
+require "base64"
 
-class DimiDisk < Sinatra::Base  
+class DimiDisk < Sinatra::Base
   load "routes.rb"
 end
