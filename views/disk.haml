@@ -1,3 +1,7 @@
-%h1= "Your Disk."
-%p=html_escape(@res.body)
-=session["JSESSIONID"]
+!!! 5
+%html
+	%head
+		= partial "meta/_meta"
+	%body
+		%h1= "Your Disk."
+		%p=html_escape(@res.body)

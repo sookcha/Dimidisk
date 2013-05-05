@@ -20,25 +20,32 @@ post '/login' do
     'Referer' => 'http://disk.dimigo.hs.kr:8282/login.jsp',
     'Content-Type' => 'application/x-www-form-urlencoded',
     'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'User-Agent' => 'DimiDiskforChrome'
+    'User-Agent' => 'DimiDiskforChrome',
   }
   
-  @resp = http.post(path, data, headers)
-  @cookies = @resp.get_fields('set-cookie')[0].split(/;/)[0].split(/=/)
-  @cookieName = @cookies[0]
-  @cookieValue = @cookies[1]
+  resp = http.post(path, data, headers)
+  cookies = resp.get_fields('set-cookie')[0].split(/;/)[0].split(/=/)
+  cookieValue = cookies[1]
   
-  session["JSESSIONID"] = @cookieValue
+  session["JSESSIONID"] = cookieValue
   redirect '/disk'
 end
 
+get '/application.css' do
+  less(:"../public/application")
+end
+
 get '/disk' do
-  url = URI.parse('http://disk.dimigo.hs.kr:8282/index.jsp')
+  diskURL = "http://disk.dimigo.hs.kr:8282/"
+  url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
   header = {
     "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Cookie" => "JSESSIONID="+session["JSESSIONID"]
+    "Connection" => "keep-alive",
+    "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
+    "Cookie" => "JSESSIONID="+session["JSESSIONID"],
+    'User-Agent' => 'DimiDiskforChrome'
   }
-  req = Net::HTTP::Get.new(url.path,header)
+  req = Net::HTTP::Get.new(url.path+"?"+url.query,header)
   @res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
