@@ -18,3 +18,4 @@
 			- @directoryNames.each_with_index do |directoryName,i|
 				%a{:href=>@userid+"/"+escape_html(@directoryIds[i].text)}
 					%p=escape_html(directoryName.text)
+			%p=@rawParams.count("/")

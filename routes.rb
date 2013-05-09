@@ -20,7 +20,7 @@ post '/login' do
     'Referer' => 'http://disk.dimigo.hs.kr:8282/login.jsp',
     'Content-Type' => 'application/x-www-form-urlencoded',
     'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'User-Agent' => 'DimiDiskforChrome',
+    'User-Agent' => 'DimiDisk',
   }
   
   resp = http.post(path, data, headers)
@@ -43,7 +43,7 @@ get '/shared' do
     "Connection" => "keep-alive",
     "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
     "Cookie" => "JSESSIONID=" + session["JSESSIONID"],
-    'User-Agent' => 'DimiDiskforChrome'
+    'User-Agent' => 'DimiDIsk'
   }
   req = Net::HTTP::Get.new(url.path+"?"+url.query,header)
   @res = Net::HTTP.start(url.host, url.port) {|http|
@@ -57,17 +57,23 @@ get '/shared' do
   haml :disk
 end
 
-get '/shared/:id' do
-  @userid = params[:id]
+get '/shared/*' do
+  @rawParams = params[:splat].to_s
+  @userid = "1404"
+  @userid = params[:splat].last.split("/").last if params[:splat].last.split("/").last != nil
   diskURL = "http://disk.dimigo.hs.kr:8282/"
-  url = URI.parse(diskURL + "TreeService.do?tid=shareuser_"+@userid+"&disktype=none&id=shareuser_"+@userid)
+  if @rawParams.count("/") < 1
+    url = URI.parse(diskURL + "ListService.do?tid=shareuser_"+@userid+"&disktype=none&id=shareuser_"+@userid)
+  else
+    url = URI.parse(diskURL + "ListService.do?id=folder_"+@userid+"&disktype=none&id=shareuser_"+@userid)
+  end
   
   header = {
     "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Connection" => "keep-alive",
     "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
     "Cookie" => "JSESSIONID=" + session["JSESSIONID"],
-    'User-Agent' => 'DimiDiskforChrome'
+    'User-Agent' => 'DimiDIsk'
   }
   req = Net::HTTP::Get.new(url.path + "?" + url.query,header)
   @res = Net::HTTP.start(url.host, url.port) {|http|
@@ -75,8 +81,8 @@ get '/shared/:id' do
   }
   
   document = Nokogiri::XML::Document.parse(@res.body)
-  @directoryIds = document.xpath("/tree/item/userdata[1]")
-  @directoryNames = document.xpath("/tree/item/userdata[3]")
+  @directoryIds = document.xpath("/rows/row/userdata[2]")
+  @directoryNames = document.xpath("/rows/row/userdata[3]")
   
   haml :innerDisk
 end
