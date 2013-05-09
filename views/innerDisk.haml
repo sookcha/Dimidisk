@@ -1,7 +1,7 @@
 !!! 5
 %html
 	%head
-		= partial "meta/_meta"
+		= partial "meta/__meta"
 	%body
 		.container
 			.navbar.navbar-inverse
@@ -15,6 +15,6 @@
 									%a{:href=>"shared"} Shared
 								%li
 									%a{:href=>"login"} Login
-			- @names.each_with_index do |name,i|
-				%a{:href => "shared/" +@ids[i].text}
-					%p= name
+			- @directoryNames.each_with_index do |directoryName,i|
+				%a{:href=>@userid+"/"+escape_html(@directoryIds[i].text)}
+					%p=escape_html(directoryName.text)

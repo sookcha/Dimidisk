@@ -8,6 +8,7 @@ require "less"
 require "base64"
 require "net/http"
 require "uri"
+require "nokogiri"
 
 class DimiDisk < Sinatra::Base
   use Rack::Session::File, :storage => ENV['TEMP'],

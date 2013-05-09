@@ -6,6 +6,7 @@ GEM
       tilt
     less (2.3.2)
       commonjs (~> 0.2.6)
+    nokogiri (1.5.9)
     puma (1.6.3)
       rack (~> 1.2)
     rack (1.5.2)
@@ -33,6 +34,7 @@ PLATFORMS
 DEPENDENCIES
   haml
   less
+  nokogiri
   puma
   rack-session-file
   sinatra

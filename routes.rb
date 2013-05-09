@@ -28,27 +28,55 @@ post '/login' do
   cookieValue = cookies[1]
   
   session["JSESSIONID"] = cookieValue
-  redirect '/disk'
+  redirect '/shared'
 end
 
 get '/application.css' do
   less(:"../public/application")
 end
 
-get '/disk' do
+get '/shared' do
   diskURL = "http://disk.dimigo.hs.kr:8282/"
   url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
   header = {
     "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Connection" => "keep-alive",
     "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
-    "Cookie" => "JSESSIONID="+session["JSESSIONID"],
+    "Cookie" => "JSESSIONID=" + session["JSESSIONID"],
     'User-Agent' => 'DimiDiskforChrome'
   }
   req = Net::HTTP::Get.new(url.path+"?"+url.query,header)
   @res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
-
+  
+  document = Nokogiri::XML::Document.parse(@res.body) 
+  @names = document.xpath("/rows/row/userdata[3]")
+  @ids = document.xpath("/rows/row/userdata[2]")
+  
   haml :disk
+end
+
+get '/shared/:id' do
+  @userid = params[:id]
+  diskURL = "http://disk.dimigo.hs.kr:8282/"
+  url = URI.parse(diskURL + "TreeService.do?tid=shareuser_"+@userid+"&disktype=none&id=shareuser_"+@userid)
+  
+  header = {
+    "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Connection" => "keep-alive",
+    "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
+    "Cookie" => "JSESSIONID=" + session["JSESSIONID"],
+    'User-Agent' => 'DimiDiskforChrome'
+  }
+  req = Net::HTTP::Get.new(url.path + "?" + url.query,header)
+  @res = Net::HTTP.start(url.host, url.port) {|http|
+    http.request(req)
+  }
+  
+  document = Nokogiri::XML::Document.parse(@res.body)
+  @directoryIds = document.xpath("/tree/item/userdata[1]")
+  @directoryNames = document.xpath("/tree/item/userdata[3]")
+  
+  haml :innerDisk
 end
