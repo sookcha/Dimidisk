@@ -20,3 +20,5 @@ gem 'less'
 
 # Using Nokogiri to parse XML file.
 gem 'nokogiri'
+gem 'therubyracer'
+gem 'libv8'
