@@ -45,7 +45,7 @@ Sinatra::Base.get '/flat-ui.css' do
   send_file "public/flat-ui.css"
 end
 
-Sinatra::Base.get '/grid.png' do
+Sinatra::Base.get '/grid.css' do
   headers["Content-Type"] = "text/css"
   send_file "public/grid.css"
 end
