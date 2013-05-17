@@ -12,9 +12,9 @@
 								%li
 									%a{:href=>"/"} DimiDisk
 								%li
-									%a{:href=>"shared"} Shared
+									%a{:href=>"/shared"} Shared
 								%li
-									%a{:href=>"login"} Login
+									%a{:href=>"/login"} Login
 			- @names.each_with_index do |name,i|
 				- if i != 0
 					%a{:href => "shared/" +@ids[i].text}
