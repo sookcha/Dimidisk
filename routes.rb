@@ -45,6 +45,15 @@ Sinatra::Base.get '/flat-ui.css' do
   send_file "public/flat-ui.css"
 end
 
+Sinatra::Base.get '/grid.png' do
+  headers["Content-Type"] = "text/css"
+  send_file "public/grid.css"
+end
+
+Sinatra::Base.get '/intro.png' do
+  send_file "public/intro.png"
+end
+
 Sinatra::Base.get '/shared' do
   diskURL = "http://disk.dimigo.hs.kr:8282/"
   url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
