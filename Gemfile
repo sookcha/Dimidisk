@@ -17,5 +17,5 @@ gem 'haml'
 # Using LESS stylesheet language.
 gem 'less'
 
-# Using Nokogiri to parse XML.
+# Using Nokogiri to parse XML file.
 gem 'nokogiri'
