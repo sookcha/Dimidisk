@@ -16,5 +16,6 @@
 								%li
 									%a{:href=>"login"} Login
 			- @names.each_with_index do |name,i|
-				%a{:href => "shared/" +@ids[i].text}
-					%p= name
+				- if i != 0
+					%a{:href => "shared/" +@ids[i].text}
+						%p= name

@@ -104,6 +104,7 @@ get '/shared/*' do
   }
     
   document = Nokogiri::XML::Document.parse(@res.body)
+  @directoryTypes = document.xpath("/rows/row/userdata[1]")
   @directoryIds = document.xpath("/rows/row/userdata[2]")
   @directoryNames = document.xpath("/rows/row/userdata[3]")
   
