@@ -1,12 +1,12 @@
-get '/' do
+Sinatra::Base.get '/' do
   haml :index
 end
 
-get '/login' do
+Sinatra::Base.get '/login' do
   haml :login
 end
 
-post '/login' do
+Sinatra::Base.post '/login' do
   http = Net::HTTP.new('disk.dimigo.hs.kr', 8282)
   path = '/LoginService.do'
 
@@ -31,11 +31,22 @@ post '/login' do
   redirect '/shared'
 end
 
-get '/application.css' do
+Sinatra::Base.get '/application.css' do
   less(:"../public/application")
 end
 
-get '/shared' do
+Sinatra::Base.get '/bootstrap.css' do
+  headers["Content-Type"] = "text/css"
+  send_file "public/bootstrap.css"
+end
+
+Sinatra::Base.get '/flat-ui.css' do
+  headers["Content-Type"] = "text/css"
+  send_file "public/flat-ui.css"
+end
+
+
+Sinatra::Base.get '/shared' do
   diskURL = "http://disk.dimigo.hs.kr:8282/"
   url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
   header = {
@@ -43,7 +54,7 @@ get '/shared' do
     "Connection" => "keep-alive",
     "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
     "Cookie" => "JSESSIONID=" + session["JSESSIONID"],
-    'User-Agent' => 'DimiDIsk'
+    'User-Agent' => 'DimiDisk'
   }
   req = Net::HTTP::Get.new(url.path+"?"+url.query,header)
   @res = Net::HTTP.start(url.host, url.port) {|http|
@@ -57,7 +68,7 @@ get '/shared' do
   haml :disk
 end
 
-get '/download/:diskid/:fileid/:filename' do
+Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
   headers["Content-Type"] = "application/octet-stream"
   headers["Content-Disposition"] = "attachment; filename="+params[:filename]
   
@@ -78,10 +89,9 @@ get '/download/:diskid/:fileid/:filename' do
   }
   
   resp = http.post(path, data, headers).body
-  
 end
 
-get '/shared/*' do
+Sinatra::Base.get '/shared/*' do
   @rawParams = params[:splat].to_s
   @userid = params[:splat].last.split("/").last if params[:splat].last.split("/").last != nil
   diskURL = "http://disk.dimigo.hs.kr:8282/"

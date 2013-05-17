@@ -1,4 +1,13 @@
 source 'http://rubygems.org'
+
 'sinatra'
+'sinatra-base'
+'sinatra-partial'
+'sinatra-static-assets'
+'rack-session-file'
+'puma'
 'haml'
 'less'
+'nokogiri'
+'libv8'
+'therubyracer'
