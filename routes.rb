@@ -57,9 +57,32 @@ get '/shared' do
   haml :disk
 end
 
+get '/download/:diskid/:fileid/:filename' do
+  headers["Content-Type"] = "application/octet-stream"
+  headers["Content-Disposition"] = "attachment; filename="+params[:filename]
+  
+  fileid = params[:fileid]
+  diskid = params[:diskid]
+  
+  http = Net::HTTP.new('disk.dimigo.hs.kr', 8282)
+  path = '/WebFileDownloader.do'
+
+  data = "id="+ fileid +"&diskType=sharedisk&diskId=" + diskid
+  headers = {
+    'Origin' => 'http://disk.dimigo.hs.kr:8282',
+    'Accept-Encoding' => 'gzip,deflate',
+    'Content-Type' => 'application/x-www-form-urlencoded',
+    'Accept' => 'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*',
+    'User-Agent' => 'DimiDisk',
+    'Cookie' => 'JSESSIONID=' + session["JSESSIONID"]
+  }
+  
+  resp = http.post(path, data, headers).body
+  
+end
+
 get '/shared/*' do
   @rawParams = params[:splat].to_s
-  @userid = "1404"
   @userid = params[:splat].last.split("/").last if params[:splat].last.split("/").last != nil
   diskURL = "http://disk.dimigo.hs.kr:8282/"
   if @rawParams.count("/") < 1
@@ -73,13 +96,13 @@ get '/shared/*' do
     "Connection" => "keep-alive",
     "Referer" => "http://disk.dimigo.hs.kr:8282/index.jsp",
     "Cookie" => "JSESSIONID=" + session["JSESSIONID"],
-    'User-Agent' => 'DimiDIsk'
+    'User-Agent' => 'DimiDisk'
   }
   req = Net::HTTP::Get.new(url.path + "?" + url.query,header)
   @res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
-  
+    
   document = Nokogiri::XML::Document.parse(@res.body)
   @directoryIds = document.xpath("/rows/row/userdata[2]")
   @directoryNames = document.xpath("/rows/row/userdata[3]")
