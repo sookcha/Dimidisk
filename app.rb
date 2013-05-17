@@ -1,7 +1,6 @@
 require "sinatra"
 require "sinatra/partial"
 require "sinatra/static_assets"
-require "sinatra/session"
 require "rack/session/file"
 require "haml"
 require "less"
