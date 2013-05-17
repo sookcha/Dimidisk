@@ -15,6 +15,7 @@ require "nokogiri"
 class DimiDisk < Sinatra::Base
   use Rack::Session::File, :storage => ENV['TEMP'],
                            :expire_after => 1800
-  
+                           
   load "routes.rb"
+  load "partial.rb"
 end
