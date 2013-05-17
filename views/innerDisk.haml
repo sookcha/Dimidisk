@@ -18,7 +18,7 @@
 									
 			- @directoryNames.each_with_index do |directoryName,i|
 				- if i != 0
-					- if @directoryTypes.last.text == "file"
+					- if @directory[i * 3].text == "file"
 						%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
 							%p=escape_html(directoryName.text)
 					- else
