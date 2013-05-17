@@ -9,5 +9,15 @@
 
 다른 방법으로는, 이 Git 저장소를 Clone 한 뒤, 자신의 컴퓨터에서 로컬로 직접 서버를 돌려 이용할 수도 있습니다.
 
+## 곧 추가될 기능들
+
+1. hwp포맷의 파일을 웹에서 바로 열람
+2. 파일 검색 기능
+
+
 ## LICENSE
 이 프로젝트는 `MIT License`를 따릅니다. 자세한 내용은 `LICENSE` 파일을 참조해주세요.
+
+## Contact me
+
+여러 건의 및 질문들은 [public@sookcha.com](public@sookcha.com) 으로 받습니다.
