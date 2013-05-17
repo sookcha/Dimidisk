@@ -35,7 +35,7 @@ Sinatra::Base.get '/application.css' do
   less(:"../public/application")
 end
 
-Sinatra::Base.get '/bootstrap.css' do
+Sinatra::Base.get '/1140.css' do
   headers["Content-Type"] = "text/css"
   send_file "public/bootstrap.css"
 end

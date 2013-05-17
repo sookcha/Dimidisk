@@ -3,19 +3,15 @@
 	%head
 		= partial "meta/_meta"
 	%body
+		.menu
+			%h1.logo Dimidisk
+			%a.menu{:href=>'/login'}
+				%span.option{:class=>"radius button secondary"} Login
+			%a.menu{:href=>'/shared'}
+				%span.option{:class=>"radius button secondary"} Shared
 		.container
-			.navbar.navbar-inverse
-				.navbar-inner
-					.container
-						.nav-collapse.collapse
-							%ul.nav
-								%li
-									%a{:href=>"/"} DimiDisk
-								%li
-									%a{:href=>"/shared"} Shared
-								%li
-									%a{:href=>"/login"} Login
 			- @names.each_with_index do |name,i|
 				- if i != 0
-					%a{:href => "shared/" +@ids[i].text}
-						%p= name
+					.span2
+						%a{:href => "shared/" +@ids[i].text}
+							%p= name

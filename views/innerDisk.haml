@@ -3,24 +3,20 @@
 	%head
 		= partial "meta/__meta"
 	%body
+		.menu
+			%h1.logo Dimidisk
+			%a.menu{:href=>'/login'}
+				%span.option{:class=>"radius button secondary"} Login
+			%a.menu{:href=>'/shared'}
+				%span.option{:class=>"radius button secondary"} Shared
 		.container
-			.navbar.navbar-inverse
-				.navbar-inner
-					.container
-						.nav-collapse.collapse
-							%ul.nav
-								%li
-									%a{:href=>"/"} DimiDisk
-								%li
-									%a{:href=>"/shared"} Shared
-								%li
-									%a{:href=>"/login"} Login
-									
 			- @directoryNames.each_with_index do |directoryName,i|
 				- if i != 0
 					- if @directory[i * 3].text == "file"
-						%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
-							%p=escape_html(directoryName.text)
+						.span6
+							%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
+								%p=escape_html(directoryName.text)
 					- else
-						%a{:href => @userid+"/"+escape_html(@directoryIds[i].text)}
-							%p=escape_html(directoryName.text)
+						.span2
+							%a{:href => @userid+"/"+escape_html(@directoryIds[i].text)}
+								%p=escape_html(directoryName.text)
