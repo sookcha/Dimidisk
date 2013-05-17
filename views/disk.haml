@@ -6,10 +6,6 @@
 	%body
 		.menu
 			%h1.logo Dimidisk
-			%a.menu{:href=>'/login'}
-				%span.option{:class=>"radius button secondary"} Login
-			%a.menu{:href=>'/shared'}
-				%span.option{:class=>"radius button secondary"} Shared
 		.container
 			- @names.each_with_index do |name,i|
 				- if i != 0
