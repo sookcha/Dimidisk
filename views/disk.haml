@@ -5,7 +5,11 @@
 		= partial "meta/_meta"
 	%body
 		.menu
-			%h1.logo Dimidisk
+			%a.menu{:href=>'/'}
+				%h1.logo Dimidisk
+			%a.menu{:href=>'/logout'}
+				%span.option{:class=>"radius button secondary"} Logout
+			
 		.container
 			- @names.each_with_index do |name,i|
 				- if i != 0

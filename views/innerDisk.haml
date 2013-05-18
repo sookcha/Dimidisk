@@ -5,15 +5,16 @@
 		= partial "meta/__meta"
 	%body
 		.menu
-			%h1.logo Dimidisk
+			%a.menu{:href=>'/'}
+				%h1.logo Dimidisk
+			%a.menu{:href=>'/logout'}
+				%span.option{:class=>"radius button secondary"} Logout
 		.container
 			- @directoryNames.each_with_index do |directoryName,i|
 				- if i != 0
 					- if @directory[i * 3].text == "file"
-						.span6
-							%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
-								%p=escape_html(directoryName.text)
+						%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
+							%p=escape_html(directoryName.text)
 					- else
-						.span2
-							%a{:href => @userid+"/"+escape_html(@directoryIds[i].text)}
-								%p=escape_html(directoryName.text)
+						%a{:href => @userid+"/"+escape_html(@directoryIds[i].text)}
+							%p=escape_html(directoryName.text)

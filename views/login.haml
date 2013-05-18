@@ -6,7 +6,8 @@
 	%body
 		.log-in
 			%h1= "Login"
+			%span= "디미고 웹하드 계정을 그대로 이용할 수 있습니다."
 			%form{:action=>"/login",:method=>:POST}
-				%input{:type=>"text", :name=>"username"}
-				%input{:type=>"password", :name=>"password"}
+				%input{:type=>"text", :name=>"username",:placeholder=>"ID"}
+				%input{:type=>"password", :name=>"password",:placeholder=>"Password"}
 				%input.btn.btn-large.btn-block{:type=>:submit, :value => "Login"}

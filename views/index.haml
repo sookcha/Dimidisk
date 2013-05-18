@@ -7,10 +7,14 @@
 	.carousel{itemscope:true,itemtype:"http://schema.org/CreativeWork"}
 		.menu
 			%h1.logo Dimidisk
-			%a.menu{:href=>'/login'}
-				%span.option{:class=>"radius button secondary"} Login
-			%a.menu{:href=>'/shared'}
-				%span.option{:class=>"radius button secondary"} Shared
+			- if session["JSESSIONID"] == nil
+				%a.menu{:href=>'/login'}
+					%span.option{:class=>"radius button secondary"} Login
+			- else
+				%a.menu{:href=>'/logout'}
+					%span.option{:class=>"radius button secondary"} Logout
+				%a.menu{:href=>'/shared'}
+					%span.option{:class=>"radius button secondary"} Shared
 		.message
 			%span.quate= "디미디스크."
 			%span.quate.second= "디미디스크는 IE이외의 브라우저를 지원하지 않는 디미고 웹하드를 대체하기 위한 프로젝트입니다."

@@ -3,6 +3,7 @@
 html,body
 {
 height: 100%;
+-webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -59,7 +60,7 @@ body
 .log-in
 {
 width: 220px;
-margin: 15% 15%;
+padding: 15% 15%;
 }
 
 .container 
@@ -90,6 +91,11 @@ color: #FFF;
 	border-radius: @topleft @topright @bottomright @bottomleft;
 }
 
+form
+{
+padding-top: 10px;
+}
+
 
 .container
 {
@@ -102,7 +108,7 @@ max-width: 400px;
 display:block;
 font-size: 50pt;
 font-family: "Nanum Myeongjo","NanumMyeongjo","나눔명조",serif;
-text-shadow: 0em 0em 0.9em #000
+text-shadow: 0em 0em 0.9em #000;
 }
 span.quate.second
 {
@@ -227,6 +233,16 @@ h2
 /* Mobile */
 
 @media handheld, only screen and (max-width: 767px) {
+.menu
+{
+padding-top: 0;
+}
+.container
+{
+padding-top: 30px;
+padding-left: 20px;
+width:100% !important;
+}
 .carousel
 {
 height:100%;
@@ -251,6 +267,6 @@ font-size: 30pt;
 span.quate.second
 {
 font-size: 20pt;
-line-height: 30px;
+line-height: 35px;
 }
 }
