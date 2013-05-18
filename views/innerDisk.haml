@@ -22,7 +22,6 @@
 								%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
 									%span=escape_html(directoryName.text)
 								%span=" - " + @fileSize[i]
-								%span=" | " + @fileDate[i]
 								
 							- else
 								%i{:class=>"icon-folder-close-alt"}
