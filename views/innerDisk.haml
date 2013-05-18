@@ -10,6 +10,9 @@
 			%a.menu{:href=>'/logout'}
 				%span.option{:class=>"radius button secondary"} Logout
 		.container
+			- if @directoryNames.text == ".."
+				%h1.center="저런~"
+				%span.center="파일 또는 폴더가 없군요!"
 			- @directoryNames.each_with_index do |directoryName,i|
 				- if i != 0
 					- if @directory[i * 3].text == "file"

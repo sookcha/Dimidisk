@@ -4,6 +4,16 @@
 		%title= "Dimidisk"
 		= partial "meta/_meta"
 	%body
+	#fb-root
+	%script
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=568110053210196";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		
 	.carousel{itemscope:true,itemtype:"http://schema.org/CreativeWork"}
 		.menu
 			%h1.logo Dimidisk
@@ -19,3 +29,4 @@
 			%span.quate= "디미디스크."
 			%span.quate.second= "디미디스크는 IE이외의 브라우저를 지원하지 않는 디미고 웹하드를 대체하기 위한 프로젝트입니다."
 			%span.option= link_to "깃헙에서 소스코드 보기","https://github.com/sookcha/Dimidisk"
+		.fb-like{:"data-href"=>"http://dimidisk.herokuapp.com/", :"data-send"=>"true", :"data-layout"=>"button_count", :"data-width"=>"450", :"data-show-faces"=>"true", :"data-font"=>"arial"}

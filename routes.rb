@@ -119,6 +119,5 @@ Sinatra::Base.get '/shared/*' do
   @directoryIds = document.xpath("/rows/row/userdata[2]")
   @directoryNames = document.xpath("/rows/row/userdata[3]")
   
-  
   haml :innerDisk
 end
