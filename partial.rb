@@ -25,3 +25,11 @@ Sinatra::Base.get '/font.css' do
   headers["Content-Type"] = "text/css"
   send_file "public/font.css"
 end
+
+Sinatra::Base.get "/font-awesome.min.css" do
+  headers["Content-Type"] = "text/css"
+  send_file "public/font-awesome.min.css"
+end
+Sinatra::Base.get "../fontawesome-webfont.woff" do
+  send_file "public/font/fontawesome-webfont.woff"
+end
