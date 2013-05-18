@@ -7,7 +7,7 @@
 		.menu
 			%a.menu{:href=>'/'}
 				%h1.logo Dimidisk
-			%a.menu{:href=>'/upload'}
+			%a.menu{:href=>'/upload/'+ @rawParams.split("/").last.gsub('"]','').gsub('["','')}
 				%span.option{:class=>"radius button secondary"} Upload
 			%a.menu{:href=>'/logout'}
 				%span.option{:class=>"radius button secondary"} Logout
