@@ -26,10 +26,16 @@ Sinatra::Base.get '/font.css' do
   send_file "public/font.css"
 end
 
-Sinatra::Base.get "/font-awesome.min.css" do
-  headers["Content-Type"] = "text/css"
-  send_file "public/font-awesome.min.css"
+Sinatra::Base.get "/zepto-autocomplete.js" do
+  send_file "public/zepto-autocomplete.js"
 end
-Sinatra::Base.get "../fontawesome-webfont.woff" do
-  send_file "public/font/fontawesome-webfont.woff"
+
+Sinatra::Base.get "/application.js" do
+  send_file "public/application.js"
 end
+
+
+Sinatra::Base.get "/zepto.min.js" do
+  send_file "public/zepto.min.js"
+end
+

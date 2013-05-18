@@ -114,10 +114,14 @@ Sinatra::Base.get '/shared/*' do
   }
     
   document = Nokogiri::XML::Document.parse(@res.body)
+  
   @directory = document.xpath("/rows/row/userdata")
   @directoryTypes = document.xpath("/rows/row/userdata[1]")
   @directoryIds = document.xpath("/rows/row/userdata[2]")
   @directoryNames = document.xpath("/rows/row/userdata[3]")
+  
+  @fileSize = document.xpath("/rows/row/cell[3]")
+  @fileDate = document.xpath("/rows/row/cell[7]")
   
   haml :innerDisk
 end
