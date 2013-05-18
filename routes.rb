@@ -88,13 +88,13 @@ Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
   resp = http.post(path, data, headers).body
 end
 
-get '/upload/:diskid' do
+Sinatra::Base.get '/upload/:diskid' do
   @diskid = params[:diskid]
   haml :upload
 end
 
 
-post '/upload/:diskid' do
+Sinatra::Base.post '/upload/:diskid' do
   if session["JSESSIONID"] == nil
     redirect "/login"
   end
