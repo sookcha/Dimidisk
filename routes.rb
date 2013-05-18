@@ -88,6 +88,39 @@ Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
   resp = http.post(path, data, headers).body
 end
 
+get '/upload' do
+  haml :upload
+end
+
+
+post '/upload' do
+  if session["JSESSIONID"] == nil
+    redirect "/login"
+  end
+  
+  tempfile = params[:file][:tempfile]
+      
+  http = Net::HTTP.new('disk.dimigo.hs.kr', 8282)
+  path = '/TransferService.do'
+
+  data = tempfile
+  headers = {
+    'Origin' => 'http://disk.dimigo.hs.kr:8282',
+    'Accept' => '*/*',
+    'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8',
+    'User-Agent' => 'DimiDisk',
+    "VANDI-COMMAND" => "upload",
+    "VANDI-FILENAME" => "t.zip",
+    "VANDI-PID" => "19647",
+    "VANDI-USERID" => "1404",
+    'Cookie' => 'JSESSIONID=' + session["JSESSIONID"]
+  }
+    
+  resp = http.post(path, data.read, headers).body
+  
+end
+
+
 Sinatra::Base.get '/shared/*' do
   if session["JSESSIONID"] == nil
       redirect "/login"
