@@ -7,9 +7,9 @@
    apdex_t: 0.5
    ssl: false
    monitor_mode: true
-   license_key: <%= ENV["NEW_RELIC_LICENSE_KEY"] %>
+   license_key: <%= ENV["7ae2288637193e1f64590a1a9cfcd1bf8528e3ad"] %>
    developer_mode: false
-   app_name: <%= ENV["NEW_RELIC_APP_NAME"] %>
+   app_name: <%= ENV["DimiDiskServ"] %>
    transaction_tracer:
      record_sql: obfuscated
      enabled: true
