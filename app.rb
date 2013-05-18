@@ -13,6 +13,10 @@ require "uri"
 require "nokogiri"
 
 class DimiDisk < Sinatra::Base
+	configure :production do
+  	require 'newrelic_rpm'
+	end
+
   use Rack::Session::File, :storage => ENV['TEMP'],
                            :expire_after => 1800
                            

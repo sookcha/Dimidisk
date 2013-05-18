@@ -7,6 +7,7 @@ GEM
     less (2.3.2)
       commonjs (~> 0.2.6)
     libv8 (3.11.8.17)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
     puma (2.0.1)
       rack (>= 1.1, < 2.0)
@@ -43,6 +44,7 @@ DEPENDENCIES
   haml
   less
   libv8 (~> 3.11.8)
+  newrelic_rpm
   nokogiri
   puma
   rack-session-file

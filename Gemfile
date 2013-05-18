@@ -24,5 +24,9 @@ gem 'less'
 
 # Using Nokogiri to parse XML file.
 gem 'nokogiri'
+
+# For NewRelic.
+gem 'newrelic_rpm'
+
 gem 'libv8', '~> 3.11.8'
 gem 'therubyracer', :require => 'v8'
