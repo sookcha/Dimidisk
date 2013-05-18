@@ -63,6 +63,9 @@ Sinatra::Base.get '/shared' do
 end
 
 Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
+  if session["JSESSIONID"] == nil
+    redirect "/login"
+  end
   headers["Content-Type"] = "application/octet-stream"
   headers["Content-Disposition"] = "attachment; filename="+params[:filename]
   
