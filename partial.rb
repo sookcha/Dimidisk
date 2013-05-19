@@ -17,8 +17,8 @@ Sinatra::Base.get '/grid.css' do
   send_file "public/grid.css"
 end
 
-Sinatra::Base.get '/intro.png' do
-  send_file "public/intro.png"
+Sinatra::Base.get '/intro.jpg' do
+  send_file "public/intro.jpg"
 end
 
 Sinatra::Base.get '/font.css' do
