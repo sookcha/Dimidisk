@@ -12,15 +12,9 @@
 				%span.option{:class=>"radius button secondary"} Logout
 			
 		.container
-			- @names.each_with_index do |name,i|
-				- if i != 0
-<<<<<<< HEAD
-					%ul
-						%li
+			%ul
+				- @names.each_with_index do |name,i|
+					- if i != 0
+						%li.shared
 							%a{:href => "shared/" +@ids[i].text}
-								%span= name
-=======
-					.span1
-						%a{:href => "shared/" +@ids[i].text}
-							%p= name
->>>>>>> hotjs
+								%span.shared= name.text
