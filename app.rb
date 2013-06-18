@@ -12,7 +12,7 @@ require "net/http"
 require "uri"
 require "nokogiri"
 
-class DimiDisk < Sinatra::Base
+class DimiDisk < Sinatra::Base  
 	configure :production do
   	require 'newrelic_rpm'
 	end
