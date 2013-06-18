@@ -14,7 +14,13 @@
 		.container
 			- @names.each_with_index do |name,i|
 				- if i != 0
+<<<<<<< HEAD
 					%ul
 						%li
 							%a{:href => "shared/" +@ids[i].text}
 								%span= name
+=======
+					.span1
+						%a{:href => "shared/" +@ids[i].text}
+							%p= name
+>>>>>>> hotjs
