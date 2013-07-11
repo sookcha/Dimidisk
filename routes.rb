@@ -39,7 +39,7 @@ end
 
 Sinatra::Base.get '/shared' do
   if session["JSESSIONID"] == nil
-    redirect "/login"
+ 어redirect "/login"
   end
   diskURL = "http://disk.dimigo.hs.kr:8282/"
   url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
@@ -61,6 +61,7 @@ Sinatra::Base.get '/shared' do
   
   haml :disk
 end
+
 
 Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
   if session["JSESSIONID"] == nil

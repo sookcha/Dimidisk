@@ -43,7 +43,7 @@ PLATFORMS
 DEPENDENCIES
   haml
   less
-  libv8 (~> 3.11.8)
+  libv8
   newrelic_rpm
   nokogiri
   puma

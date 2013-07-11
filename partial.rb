@@ -34,12 +34,8 @@ Sinatra::Base.get "/application.js" do
   send_file "public/application.js"
 end
 
-Sinatra::Base.get "/turbolinks.js" do
-  send_file "public/turbolinks.js"
-end
 
-
-Sinatra::Base.get "/zepto.min.js" do
-  send_file "public/zepto.min.js"
+Sinatra::Base.get "/jquery-1.10.2.min.js" do
+  send_file "public/jquery-1.10.2.min.js"
 end
 

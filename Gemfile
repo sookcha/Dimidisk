@@ -28,5 +28,5 @@ gem 'nokogiri'
 # For NewRelic.
 gem 'newrelic_rpm'
 
-gem 'libv8', '~> 3.11.8'
+gem 'libv8'
 gem 'therubyracer', :require => 'v8'
