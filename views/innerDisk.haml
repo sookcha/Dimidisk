@@ -25,7 +25,7 @@
 									%span=escape_html(directoryName.text)
 								%span=" - " + @fileSize[i]
 								- if directoryName.text.split(".")[1] == "hwp"
-									%a{:href => "http://localhost:5000/" + session["JSESSIONID"] + "/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
+									%a{:href => "http://dimihwp.herokuapp.com" + session["JSESSIONID"] + "/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
 										%span.right= "한글 뷰어"
 								
 							- else
