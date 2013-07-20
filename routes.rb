@@ -39,7 +39,7 @@ end
 
 Sinatra::Base.get '/shared' do
   if session["JSESSIONID"] == nil
- 어redirect "/login"
+    redirect "/login"
   end
   diskURL = "http://disk.dimigo.hs.kr:8282/"
   url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
