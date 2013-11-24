@@ -8,6 +8,8 @@ gem 'sinatra-partial'
 gem 'sinatra-static-assets'
 gem 'sinatra-session'
 
+gem 'turbolinks'
+
 gem 'rack-session-file'
 
 # Using PUMA for web server.
