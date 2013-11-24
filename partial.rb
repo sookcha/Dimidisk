@@ -39,3 +39,16 @@ Sinatra::Base.get "/jquery-1.10.2.min.js" do
   send_file "public/jquery-1.10.2.min.js"
 end
 
+Sinatra::Base.get "/nprogress.css" do
+  send_file "public/nprogress.css"
+end
+
+Sinatra::Base.get "/nprogress.js" do
+  send_file "public/nprogress.js"
+end
+
+Sinatra::Base.get "/turbolinks.js" do
+  send_file "public/turbolinks.js"
+end
+
+
