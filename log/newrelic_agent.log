@@ -15,3 +15,50 @@
 [11/24/13 20:32:08 +0900 sookchas-MacBook-Pro.local (43544)] INFO : Installing deferred Rack instrumentation
 [11/24/13 20:32:08 +0900 sookchas-MacBook-Pro.local (43544)] INFO : Finished instrumentation
 [11/24/13 20:32:08 +0900 sookchas-MacBook-Pro.local (43544)] INFO : Doing deferred dependency-detection before Rack startup
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Starting the New Relic agent in "production" environment.
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Reading configuration from config/newrelic.yml
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] ERROR : Unable to read configuration file config/newrelic.yml: (<unknown>): mapping values are not allowed in this context at line 2 column 12
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Enabling the Request Sampler.
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Enabling the Request Sampler.
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Environment: production
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Dispatcher: puma
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Application: production
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Installing Net instrumentation
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Installing Sinatra instrumentation
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Installing Puma cluster mode support
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Installing deferred Rack instrumentation
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Finished instrumentation
+[11/24/13 20:37:26 +0900 sookchas-MacBook-Pro.local (44257)] INFO : Doing deferred dependency-detection before Rack startup
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Starting the New Relic agent in "production" environment.
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Reading configuration from config/newrelic.yml
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] ERROR : Unable to read configuration file config/newrelic.yml: (<unknown>): mapping values are not allowed in this context at line 2 column 12
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Enabling the Request Sampler.
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Enabling the Request Sampler.
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Environment: production
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Dispatcher: thin
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Application: production
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Installing Net instrumentation
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Installing Sinatra instrumentation
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Installing deferred Rack instrumentation
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Finished instrumentation
+[11/24/13 20:39:42 +0900 sookchas-MacBook-Pro.local (44897)] INFO : Doing deferred dependency-detection before Rack startup
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Starting the New Relic agent in "production" environment.
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "production" section of your newrelic.yml.
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Reading configuration from config/newrelic.yml
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] ERROR : Unable to read configuration file config/newrelic.yml: (<unknown>): mapping values are not allowed in this context at line 2 column 12
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Enabling the Request Sampler.
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Enabling the Request Sampler.
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Environment: production
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Dispatcher: puma
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Application: production
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'production'
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Installing Net instrumentation
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Installing Sinatra instrumentation
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Installing Puma cluster mode support
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Installing deferred Rack instrumentation
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Finished instrumentation
+[11/24/13 20:40:06 +0900 sookchas-MacBook-Pro.local (44962)] INFO : Doing deferred dependency-detection before Rack startup

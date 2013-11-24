@@ -12,6 +12,8 @@ gem 'rack-session-file'
 # Using PUMA for web server.
 gem 'puma'
 
+gem 'thin'
+
 # Using Redcarpet to render Markdown.
 gem 'redcarpet'
 
