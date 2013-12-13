@@ -15,8 +15,8 @@
 			- if @directoryNames.text == ".."
 				%h1.center="저런~"
 				%span.center="파일 또는 폴더가 없군요!"
-			%ul
-				- @directoryNames.each_with_index do |directoryName,i|
+			%ul				
+				- @directoryNames.each_with_index do |directoryName,i|					
 					- if i != 0
 						%li.file
 							- if @directory[i * 3].text == "file"
