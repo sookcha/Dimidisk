@@ -1,0 +1,25 @@
+# Logfile created on 2014-01-24 08:08:19 +0900 by logger.rb/44203
+I, [2014-01-24T08:08:19.005066 #39040]  INFO -- : 0:  commonjs (0.2.7) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/commonjs-0.2.7.gemspec
+I, [2014-01-24T08:08:19.005792 #39040]  INFO -- : 0:  daemons (1.1.9) from /Users/sookcha/.rvm/gems/ruby-2.1.0@global/specifications/daemons-1.1.9.gemspec
+I, [2014-01-24T08:08:19.006328 #39040]  INFO -- : 0:  eventmachine (1.0.3) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/eventmachine-1.0.3.gemspec
+I, [2014-01-24T08:08:19.006728 #39040]  INFO -- : 0:  tilt (1.4.1) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/tilt-1.4.1.gemspec
+I, [2014-01-24T08:08:22.166009 #39040]  INFO -- : 0:  haml (4.0.5) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/haml-4.0.5.gemspec
+I, [2014-01-24T08:08:22.166759 #39040]  INFO -- : 0:  less (2.4.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/less-2.4.0.gemspec
+I, [2014-01-24T08:08:22.167344 #39040]  INFO -- : 0:  libv8 (3.16.14.3) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/libv8-3.16.14.3-x86_64-darwin-12.gemspec
+I, [2014-01-24T08:08:25.322496 #39040]  INFO -- : 0:  mini_portile (0.5.2) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/mini_portile-0.5.2.gemspec
+I, [2014-01-24T08:08:29.182134 #39040]  INFO -- : 0:  newrelic_rpm (3.7.1.188) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/newrelic_rpm-3.7.1.188.gemspec
+I, [2014-01-24T08:10:56.209878 #39040]  INFO -- : 0:  nokogiri (1.6.1) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/nokogiri-1.6.1.gemspec
+I, [2014-01-24T08:10:56.210363 #39040]  INFO -- : 0:  rack (1.5.2) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/rack-1.5.2.gemspec
+I, [2014-01-24T08:11:00.337154 #39040]  INFO -- : 0:  puma (2.7.1) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/puma-2.7.1.gemspec
+I, [2014-01-24T08:11:02.341152 #39040]  INFO -- : 0:  rack-protection (1.5.2) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/rack-protection-1.5.2.gemspec
+I, [2014-01-24T08:11:04.582989 #39040]  INFO -- : 0:  rack-session-file (0.5.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/rack-session-file-0.5.0.gemspec
+I, [2014-01-24T08:11:03.836385 #39040]  INFO -- : 0:  redcarpet (3.0.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/redcarpet-3.0.0.gemspec
+I, [2014-01-24T08:11:03.837038 #39040]  INFO -- : 0:  ref (1.0.5) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/ref-1.0.5.gemspec
+I, [2014-01-24T08:11:06.962490 #39040]  INFO -- : 0:  sinatra (1.4.4) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/sinatra-1.4.4.gemspec
+I, [2014-01-24T08:11:10.490079 #39040]  INFO -- : 0:  sinatra-base (1.4.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/sinatra-base-1.4.0.gemspec
+I, [2014-01-24T08:11:12.819043 #39040]  INFO -- : 0:  sinatra-partial (0.4.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/sinatra-partial-0.4.0.gemspec
+I, [2014-01-24T08:11:14.943064 #39040]  INFO -- : 0:  sinatra-session (1.0.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/sinatra-session-1.0.0.gemspec
+I, [2014-01-24T08:11:18.470316 #39040]  INFO -- : 0:  sinatra-static-assets (1.0.4) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/sinatra-static-assets-1.0.4.gemspec
+I, [2014-01-24T08:11:18.471110 #39040]  INFO -- : 0:  therubyracer (0.12.0) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/therubyracer-0.12.0.gemspec
+I, [2014-01-24T08:11:25.617201 #39040]  INFO -- : 0:  thin (1.6.1) from /Users/sookcha/.rvm/gems/ruby-2.1.0/specifications/thin-1.6.1.gemspec
+I, [2014-01-24T08:11:25.618252 #39040]  INFO -- : 0:  bundler (1.5.1) from /Users/sookcha/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
