@@ -18,7 +18,7 @@
 			%ul
 				%li.back
 					- if @rawParams.split("/").count > 1
-						%a{:href => @back} 뒤로가기
+						%a{:href => "/shared/" + @rawParams.split("/").first.gsub('["','')} 뒤로가기
 					- else
 						%a{:href => "/shared"} 뒤로가기
 				
