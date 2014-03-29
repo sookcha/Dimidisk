@@ -8,9 +8,9 @@
 			%a.menu{:href=>'/'}
 				%h1.logo Dimidisk
 			%a.menu{:href=>'/upload/'+ @rawParams.split("/").last.gsub('"]','').gsub('["','')}
-				%span.option{:class=>"radius button secondary"} Upload
+				%span.option{:class=>"radius button secondary"} 업로드
 			%a.menu{:href=>'/logout'}
-				%span.option{:class=>"radius button secondary"} Logout
+				%span.option{:class=>"radius button secondary"} 로그아웃
 		.container
 			- if @directoryNames.text == ".."
 				%h1.center="저런~"

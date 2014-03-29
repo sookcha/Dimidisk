@@ -2,8 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     commonjs (0.2.7)
-    daemons (1.1.9)
-    eventmachine (1.0.3)
     haml (4.0.5)
       tilt
     less (2.5.0)
@@ -39,10 +37,6 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
-    thin (1.6.2)
-      daemons (>= 1.0.9)
-      eventmachine (>= 1.0.0)
-      rack (>= 1.0.0)
     tilt (1.4.1)
 
 PLATFORMS
@@ -63,4 +57,3 @@ DEPENDENCIES
   sinatra-session
   sinatra-static-assets
   therubyracer
-  thin
