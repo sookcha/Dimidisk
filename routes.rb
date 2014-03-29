@@ -42,7 +42,7 @@ Sinatra::Base.get '/shared' do
     redirect "/login"
   end
   diskURL = "http://disk.dimigo.hs.kr:8282/"
-  url = URI.parse(diskURL + "ListService.do?id=sharedisk_1404")
+  url = URI.parse(diskURL + "ListService.do?id=sharedisk_1111")
   header = {
     "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Connection" => "keep-alive",
@@ -117,7 +117,7 @@ Sinatra::Base.post '/upload/:diskid' do
     "VANDI-FILENAME" => name,
     "VANDI-PID" => diskid,
     "VANDI-FILESIZE" => tempfile.open.read.size.to_s,
-    "VANDI-USERID" => "1404",
+    "VANDI-USERID" => "1111",
     'Cookie' => 'JSESSIONID=' + session["JSESSIONID"]
   }
   resp = http.post(path,tempfile.open.read, headers).body
