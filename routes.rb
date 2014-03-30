@@ -23,11 +23,11 @@ Sinatra::Base.post '/login' do
     'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'User-Agent' => 'DimiDisk',
   }
-  
+
   resp = http.post(path, data, headers)
   cookies = resp.get_fields('set-cookie')[0].split(/;/)[0].split(/=/)
   cookieValue = cookies[1]
-  
+
   session["JSESSIONID"] = cookieValue
   redirect '/shared'
 end
@@ -54,11 +54,11 @@ Sinatra::Base.get '/shared' do
   @res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
-  
-  document = Nokogiri::XML::Document.parse(@res.body) 
+
+  document = Nokogiri::XML::Document.parse(@res.body)
   @names = document.xpath("/rows/row/userdata[3]")
   @ids = document.xpath("/rows/row/userdata[2]")
-  
+
   haml :disk
 end
 
@@ -69,10 +69,10 @@ Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
   end
   headers["Content-Type"] = "application/octet-stream"
   headers["Content-Disposition"] = "attachment; filename="+params[:filename]
-  
+
   fileid = params[:fileid]
   diskid = params[:diskid]
-  
+
   http = Net::HTTP.new('disk.dimigo.hs.kr', 8282)
   path = '/WebFileDownloader.do'
 
@@ -85,7 +85,7 @@ Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
     'User-Agent' => 'DimiDisk',
     'Cookie' => 'JSESSIONID=' + session["JSESSIONID"]
   }
-  
+
   resp = http.post(path, data, headers).body
 end
 
@@ -99,10 +99,10 @@ Sinatra::Base.post '/upload/:diskid' do
   if session["JSESSIONID"] == nil
     redirect "/login"
   end
-  
+
   tempfile = params[:file][:tempfile]
   name = params[:file][:filename]
-  
+
   diskid = params[:diskid]
   http = Net::HTTP.new('disk.dimigo.hs.kr', 8282)
   path = '/TransferService.do'
@@ -136,7 +136,7 @@ Sinatra::Base.get '/shared/*' do
   else
     url = URI.parse(diskURL + "ListService.do?id=folder_"+@userid+"&disktype=none&id=shareuser_"+@userid)
   end
-  
+
   header = {
     "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Connection" => "keep-alive",
@@ -148,16 +148,16 @@ Sinatra::Base.get '/shared/*' do
   @res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
-    
+
   document = Nokogiri::XML::Document.parse(@res.body)
-  
+
   @directory = document.xpath("/rows/row/userdata")
   @directoryTypes = document.xpath("/rows/row/userdata[1]")
   @directoryIds = document.xpath("/rows/row/userdata[2]")
   @directoryNames = document.xpath("/rows/row/userdata[3]")
-  
+
   @fileSize = document.xpath("/rows/row/cell[3]")
   @fileDate = document.xpath("/rows/row/cell[7]")
-  
+
   haml :innerDisk
 end
