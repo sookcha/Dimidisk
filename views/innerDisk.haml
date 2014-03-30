@@ -15,14 +15,16 @@
 			- if @directoryNames.text == ".."
 				%h1.center="저런~"
 				%span.center="파일 또는 폴더가 없군요!"
+				%img.center{:src=>"http://i.imgur.com/L3J6n.jpg", :width=> "450", :height => "300"}
+
 			%ul
 				%li.back
 					- if @rawParams.split("/").count > 1
 						%a{:href => "/shared/" + @rawParams.split("/").first.gsub('["','')} 뒤로가기
 					- else
 						%a{:href => "/shared"} 뒤로가기
-				
-				- @directoryNames.each_with_index do |directoryName,i|					
+
+				- @directoryNames.each_with_index do |directoryName,i|
 					- if i != 0
 						%li.file
 							- if @directory[i * 3].text == "file"
@@ -33,9 +35,8 @@
 								- if directoryName.text.split(".")[1] == "hwp"
 									%a{:href => "http://dimihwp.herokuapp.com/" + session["JSESSIONID"] + "/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
 										%span.right= "한글 뷰어"
-								
+
 							- else
 								%i{:class=>"icon-folder-close-alt"}
 								%a{:href => @userid+"/"+escape_html(@directoryIds[i].text)}
 									%span=escape_html(directoryName.text)
-				

@@ -13,11 +13,13 @@
 
 		.container
 			%ul
-				- @names.each_with_index do |name,i|
-					- if i != 0
-						%li.shared
-							%a{:href => "shared/" +@ids[i].text}
-								%span.shared= name.text
-					- else
-						%h1.center="안타깝군요"
-						%span.center="아마도 로그인 세션이 만료되었나봅니다. 로그아웃 후 다시 로그인 해주세요."
+				- if @names.count != 0
+					- @names.each_with_index do |name,i|
+						- if i != 0
+							%li.shared
+								%a{:href => "shared/" +@ids[i].text}
+									%span.shared= name.text
+				- else
+					%h1.center="안타깝군요."
+					%span.center="아마도 로그인 세션이 만료되었나봅니다. 로그아웃 후 다시 로그인 하면 괜찮아 질거에요."
+					%img.center{:src=>"http://i.imgur.com/L3J6n.jpg", :width=> "450", :height => "300"}
