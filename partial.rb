@@ -1,5 +1,3 @@
-require "coffee-script"
-
 Sinatra::Base.get '/application.css' do
   less(:"../public/application")
 end
