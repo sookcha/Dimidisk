@@ -123,6 +123,10 @@ Sinatra::Base.post '/upload/:diskid' do
   resp = http.post(path,tempfile.open.read, headers).body
 end
 
+Sinatra::Base.get '/zip/:diskid/:fileid/:filename' do
+  
+end
+
 
 Sinatra::Base.get '/shared/*' do
   if session["JSESSIONID"] == nil

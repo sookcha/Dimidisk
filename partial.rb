@@ -1,3 +1,5 @@
+require "coffee-script"
+
 Sinatra::Base.get '/application.css' do
   less(:"../public/application")
 end
@@ -40,5 +42,3 @@ end
 Sinatra::Base.get "/turbolinks.js" do
   send_file "public/turbolinks.js"
 end
-
-

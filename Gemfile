@@ -17,6 +17,8 @@ gem 'puma'
 # Using Redcarpet to render Markdown.
 gem 'redcarpet'
 
+gem 'coffee-script'
+
 # Using haml for templating engine.
 gem 'haml'
 
