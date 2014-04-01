@@ -21,6 +21,7 @@ ready = function() {
     else
     {
       filename = $($(this).children()[2]).children()[0].innerText;
+      fileid = $($(this).children()[0]).attr("id")
       $($(this).children()[0]).prop("checked",true);
       $(".manager").show();
       console.log(filename);
@@ -29,7 +30,7 @@ ready = function() {
     }
     $(".dl-count").empty().append("<span class=count>"+ i + "개 선택됨");
     $(".dl-count").empty().append("<span class=count>"+ i + "개 선택됨");
-    $(".zip").attr("href",originalSrc + "/" +filename)
+    $(".zip").attr("href",originalSrc + "/" + fileid + "/" + filename + ",")
   });
 };
 

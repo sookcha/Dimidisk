@@ -123,8 +123,8 @@ Sinatra::Base.post '/upload/:diskid' do
   resp = http.post(path,tempfile.open.read, headers).body
 end
 
-Sinatra::Base.get '/zip/:diskid/:fileid/:filename' do
-  
+Sinatra::Base.get '/zip' do
+  params[:files].split(",")
 end
 
 
