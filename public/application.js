@@ -8,6 +8,7 @@ ready = function() {
   $(".manager").hide();
   i = 0;
   filename = "";
+  /*
   $("li.file").click(function() {
     if ($($(this).children()[0]).is(":checked"))
     {
@@ -24,14 +25,16 @@ ready = function() {
       fileid = $($(this).children()[0]).attr("id")
       $($(this).children()[0]).prop("checked",true);
       $(".manager").show();
-      console.log(filename);
       var originalSrc = $(".zip").attr('href');
+      //console.log(originalSrc);
+
       i++;
     }
     $(".dl-count").empty().append("<span class=count>"+ i + "개 선택됨");
     $(".dl-count").empty().append("<span class=count>"+ i + "개 선택됨");
     $(".zip").attr("href",originalSrc + "/" + fileid + "/" + filename + ",")
   });
+  */
 };
 
 $(document).ready(ready);

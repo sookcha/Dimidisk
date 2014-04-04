@@ -37,6 +37,10 @@ Sinatra::Base.get "/nprogress.js" do
   send_file "public/nprogress.js"
 end
 
+Sinatra::Base.get "/dimidisk-less.mp4" do
+  send_file "public/dimidisk-less.mp4"
+end
+
 Sinatra::Base.get "/turbolinks.js" do
   send_file "public/turbolinks.js"
 end

@@ -89,6 +89,16 @@ body
 	-webkit-font-smoothing: antialiased;
 }
 
+.video-control {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background: black;
+}
+
 .file:first-child {
 	border-top: 1px solid #ddd;
 }
@@ -132,7 +142,7 @@ body
 
 .container
 {
-	margin:0 10em;
+	margin: 8em 10em;
 	background-color: #FFF;
 }
 .carousel
@@ -246,8 +256,12 @@ div.slider div.handle {
 
 .message
 {
-	padding-top: 5%;
+	padding-top: 10em;
 	padding-left: 80px;
+	position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
 }
 .field
 {
@@ -262,6 +276,11 @@ div.slider div.handle {
 	padding-bottom: 20px;
 
 	bottom:0px;
+
+	position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
 }
 .logo
 {
@@ -280,6 +299,7 @@ div.slider div.handle {
 	background: #000;
 	color: #fff;
 	opacity: 0.8;
+  z-index:1;
 
 	.border-radius-custom(4px, 4px, 4px, 4px);
 }
@@ -399,7 +419,6 @@ span.button
 {
 	width: 250px;
 	padding-left: 30px;
-	padding-top: 20%;
 }
 h1.logo
 {

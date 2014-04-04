@@ -123,8 +123,32 @@ Sinatra::Base.post '/upload/:diskid' do
   resp = http.post(path,tempfile.open.read, headers).body
 end
 
-Sinatra::Base.get '/zip' do
-  params[:files].split(",")
+Sinatra::Base.get '/zip/:diskid' do
+  headers["Content-Type"] = "application/octet-stream"
+  headers["Content-Disposition"] = "attachment; filename="+params[:filename]
+
+  @files = params[:files].split(",")
+  @diskid = params[:diskid]
+
+  http = Net::HTTP.new('disk.dimigo.hs.kr', 8282)
+  path = '/WebFileDownloader.do'
+
+  headers = {
+    'Origin' => 'http://disk.dimigo.hs.kr:8282',
+    'Accept-Encoding' => 'gzip,deflate',
+    'Content-Type' => 'application/x-www-form-urlencoded',
+    'Accept' => 'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*',
+    'User-Agent' => 'DimiDisk',
+    'Cookie' => 'JSESSIONID=' + session["JSESSIONID"]
+  }
+
+  @files.each do |file|
+    @fileid = file.split("/")[1]
+    @data = "id="+ @fileid +"&diskType=sharedisk&diskId=" + @diskid
+    resp = http.post(path, @data, headers).body
+  end
+
+  haml :zip
 end
 
 
