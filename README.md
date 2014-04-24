@@ -21,7 +21,23 @@
 
 
 ## LICENSE
-이 프로젝트는 `MIT License`를 따릅니다. 자세한 내용은 `LICENSE` 파일을 참조해주세요.
+
+Copyright (C) 2014 Ho-seong Son
+
+![AGPL3](http://www.gnu.org/graphics/agplv3-155x51.png)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Contact me
 
