@@ -22,7 +22,7 @@
 
 ## LICENSE
 
-Copyright (C) 2014 Ho-seong Son
+Copyright (C) 2013 Ho-seong Son
 
 ![AGPL3](http://www.gnu.org/graphics/agplv3-155x51.png)
 
