@@ -28,7 +28,7 @@
 					- if i != 0
 						%li.file
 							- if @directory[i * 3].text == "file"
-								%input{:type=>"checkbox",:id=>escape_html(@directoryIds[i].text)}
+								//%input{:type=>"checkbox",:id=>escape_html(@directoryIds[i].text)}
 								%i{:class=>"icon-file"}
 								%a{:href => "/download/" + @rawParams.split("/")[1].gsub('"]','') + "/" + escape_html(@directoryIds[i].text) + "/" + escape_html(directoryName.text)}
 									%span=escape_html(directoryName.text)
