@@ -1,11 +1,15 @@
 !!! 5
 %html
 	%head{:xmlns=>"http://www.w3.org/1999/xhtml",:"xmlns:og"=>"http://ogp.me/ns#" ,:"xmlns:fb"=>"http://www.facebook.com/2008/fbml"}
-		%title= "Dimidisk"
+		- if params[:name] != nil
+			%title= "Dimidisk - " + params[:name]
+		- else
+			%title= "Dimidisk"
+		
 		= partial "meta/__meta"
 	%body
 		.menu
-			%a.menu{:href=>'/'}
+			%a.menu{:href=>'/shared'}
 				%h1.logo Dimidisk
 			%a.menu{:href=>'/upload/'+ @rawParams.split("/").last.gsub('"]','').gsub('["','')}
 				%span.option{:class=>"radius button secondary"} 업로드
@@ -16,13 +20,14 @@
 				%h1.center="저런~"
 				%span.center="파일 또는 폴더가 없군요!"
 				%img.center{:src=>"http://i.imgur.com/L3J6n.jpg", :width=> "450", :height => "300"}
-
+			
 			%ul
+				- if params[:name] != nil
+					- if @directoryNames.text != ".."
+						%h1.title= params[:name]
+				
 				%li.back
-					- if @rawParams.split("/").count > 1
-						%a{:href => "/shared/" + @rawParams.split("/").first.gsub('["','')} 뒤로가기
-					- else
-						%a{:href => "/shared"} 뒤로가기
+					%a{:href => "#", :onClick=>"history.back();return false;"} 뒤로가기
 
 				- @directoryNames.each_with_index do |directoryName,i|
 					- if i != 0
@@ -39,7 +44,7 @@
 
 							- else
 								%i{:class=>"icon-folder-close-alt"}
-								%a{:href => @userid+"/"+escape_html(@directoryIds[i].text)}
+								%a{:href => @userid+"/"+escape_html(@directoryIds[i].text) + "?name=" + escape_html(directoryName.text)}
 									%span=escape_html(directoryName.text)
 	- if @rawParams.split("/")[1] != nil
 		%footer.manager

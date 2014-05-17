@@ -1,12 +1,15 @@
 !!! 5
 %html
 	%head{:xmlns=>"http://www.w3.org/1999/xhtml",:"xmlns:og"=>"http://ogp.me/ns#" ,:"xmlns:fb"=>"http://www.facebook.com/2008/fbml"}
-
-		%title= "Dimidisk"
+		- if params[:name] != nil
+			%title= "Dimidisk - " + params[:name]
+		- else
+			%title= "Dimidisk"
+			
 		= partial "meta/_meta"
 	%body
 		.menu
-			%a.menu{:href=>'/'}
+			%a.menu{:href=>'/shared'}
 				%h1.logo Dimidisk
 			%a.menu{:href=>'/logout'}
 				%span.option{:class=>"radius button secondary"} 로그아웃
@@ -17,7 +20,7 @@
 					- @names.each_with_index do |name,i|
 						- if i != 0
 							%li.shared
-								%a{:href => "shared/" +@ids[i].text}
+								%a{:href => "shared/" + @ids[i].text + "?name=" + name.text}
 									%span.shared= name.text
 				- else
 					%h1.center="안타깝군요."

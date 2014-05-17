@@ -1,1 +1,9 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ src: url('http://acidcolor.sookcha.com/fonts/NanumBarunGothic.eot');
+ src: url('http://acidcolor.sookcha.com/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+ url('http://acidcolor.sookcha.com/fonts/NanumBarunGothic.woff') format('woff'),
+ url('http://acidcolor.sookcha.com/fonts/NanumBarunGothic.ttf') format('truetype');
+}

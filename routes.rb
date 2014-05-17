@@ -67,8 +67,9 @@ Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
   if session["JSESSIONID"] == nil
     redirect "/login"
   end
-  headers["Content-Type"] = "application/octet-stream"
+  
   headers["Content-Disposition"] = "attachment; filename="+params[:filename]
+  headers["Content-Type"] = "application/octet-stream"
 
   fileid = params[:fileid]
   diskid = params[:diskid]
@@ -85,14 +86,24 @@ Sinatra::Base.get '/download/:diskid/:fileid/:filename' do
     'User-Agent' => 'DimiDisk',
     'Cookie' => 'JSESSIONID=' + session["JSESSIONID"]
   }
-
-  resp = http.post(path, data, headers).body
+  
+  if http.post(path, data, headers).body.to_s.include? '<result code="-1000"'
+    redirect "/error/-1000"
+  else
+    resp = http.post(path, data, headers).body
+  end
+  
 end
 
 Sinatra::Base.get '/upload/:diskid' do
   @diskid = params[:diskid]
   haml :upload
 end
+
+Sinatra::Base.get '/error/:code' do
+  haml :error
+end
+
 
 
 Sinatra::Base.post '/upload/:diskid' do
@@ -151,6 +162,10 @@ Sinatra::Base.get '/zip/:diskid' do
   haml :zip
 end
 
+Sinatra::Base.get '/about' do
+  haml :about
+end
+
 
 Sinatra::Base.get '/shared/*' do
   if session["JSESSIONID"] == nil
@@ -186,6 +201,5 @@ Sinatra::Base.get '/shared/*' do
 
   @fileSize = document.xpath("/rows/row/cell[3]")
   @fileDate = document.xpath("/rows/row/cell[7]")
-
   haml :innerDisk
 end
