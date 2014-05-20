@@ -1,6 +1,7 @@
 #Dimidisk
 [![Stories in Ready](https://badge.waffle.io/sookcha/dimidisk.png?label=ready&title=Ready)](https://waffle.io/sookcha/dimidisk)
 ![Travis](https://travis-ci.org/sookcha/Dimidisk.svg)
+[![Dependency Status](https://gemnasium.com/sookcha/Dimidisk.svg)](https://gemnasium.com/sookcha/Dimidisk)
 
 ##Preface
 
