@@ -47,3 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 여러 건의 및 질문들은 [public@sookcha.com](mailto:public@sookcha.com) 으로 받습니다.
 
 또한 이 Github저장소의 Issues 탭에다가 이슈를 추가해주셔도 됩니다.
+
+## Thanks to
+
+[Codepot](cpsoft.kr)
